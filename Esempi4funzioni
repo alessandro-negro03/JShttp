@@ -1,0 +1,30 @@
+//esempio di sintassi ed utilizzo delle 4 funzioni importanti
+//(.map  .filter  .forEach  .reduce)
+
+
+
+const array = [1, 2, 3, 4, 5, 6] //array a caso di esempio
+
+//reduce
+const reducer = (acc, currentValue) => acc = acc + currentValue; //funzione da mettere dentro al .reduce, in questo caso somma tutti i numeri dell'array
+const x = array.reduce(reducer) 
+console.log(x) //stamperebbe 21
+// reduce
+
+//map,   crea un nuovo array con tutti i valori del primo array che hanno subito la funzione che gli passiamo
+console.log(array)
+const somma = (value) => value = value + 1; //funzione che passeremo al .map
+const risultato_map = array.map(somma) //ci crea un nuovo array con tutti i valori del primo però sommati di 1
+console.log(risultato_map) //stamperebbe 2,3,4,5,6,7
+
+//filter,  crea nuovo array con tutti i valori del primo che hanno subito il filtro
+const bigenought  = (value) => {
+    return value > 3
+}//è la funzione che mettteremo nel filtro, in questo caso vogliamo filtrare tutti quelli maggiori di 3
+const risultato_filter = array.filter(bigenought)
+
+console.log(risultato_filter) //stamperebbe 4,5,6
+
+//forEach, esegue una funzione su tutti i valori dell'array
+const stampa =(value)=>console.log(value) //in questo caso ci stampa tutti i valori contenuti nell'array
+array.forEach(stampa)
