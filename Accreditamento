@@ -1,0 +1,9 @@
+const fetch = require("node-fetch")
+
+fetch("http://192.168.1.231:8080/accreditamento",{
+  method: "post",
+  body: JSON.stringify({nome: "Alessandro Negro"}),
+  headers: { "Content-Type": "application/json"},
+})
+.then(res => res.json())
+.then(json => console.log(json))
