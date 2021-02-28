@@ -1,0 +1,18 @@
+//programma per ricevere la consegna e leggere i dati
+//consiglio:metterlo nella stessa cartella ma in un file separato, in modo da farlo partire quando si vuole
+
+const fetch = require("node-fetch")
+
+fetch("http://192.168.1.231:8080/esercizi/1",{
+  method: "get",
+  headers: {
+    "x-data": "true"
+  },
+})
+.then(res => res.json())
+.then(resBody => {
+
+  const reqData = resBody.data
+  
+  console.log(resBody)
+})
